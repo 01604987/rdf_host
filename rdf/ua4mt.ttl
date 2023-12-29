@@ -1,0 +1,98 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:		<http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+
+# Formal address of the resources definied in this file,
+# no matter what the physical address of this file may be.
+@base			<http://defs.euprogigant.io/ua4mt#> .
+#@base           <http://localhost:5000/ua4mt#> .
+
+# Reference to the current file itself so that "ua4mt:" can be
+# used as prefix for the local definitions.
+@prefix ua4mt:		<http://defs.euprogigant.io/ua4mt#> .
+
+#@prefix ua4mt:		<http://localhost:5000/ua4mt#> .
+
+
+#-------------------------------------------------------------------------------
+
+ua4mt:MachineToolIdentification
+  a rdf:Class ;
+  rdfs:comment "A definite identification of a concrete machine tool"@en.
+
+ua4mt:machineToolManufacturer
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:model
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:deviceClass
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:productionCode
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:yearOfConstruction
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:serialNumber
+  a rdf:Property;
+  rdfs:comment "The serial number of the machine tool"@en;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:hardwareRevision
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:softwareRevision
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:location
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:string.
+
+ua4mt:productInstanceUri
+  a rdf:Property;
+  rdfs:domain ua4mt:MachineToolIdentification;
+  rdfs:range  xsd:anyURI.
+
+#-------------------------------------------------------------------------------
+
+ua4mt:SoftwareItem
+  a rdf:Class ;
+  rdfs:comment "A software component"@en.
+
+ua4mt:name
+  a rdf:Property;
+  rdfs:domain ua4mt:SoftwareItem;
+  rdfs:range  xsd:string.
+
+ua4mt:identification
+  a rdf:Property;
+  rdfs:domain ua4mt:SoftwareItem;
+  rdfs:range  xsd:string.
+
+ua4mt:softwareItemManufacturer
+  a rdf:Property;
+  rdfs:domain ua4mt:SoftwareItem;
+  rdfs:range  xsd:string.
+
+ua4mt:revision
+  a rdf:Property;
+  rdfs:domain ua4mt:SoftwareItem;
+  rdfs:range  xsd:string.

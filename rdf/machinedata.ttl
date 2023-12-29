@@ -1,0 +1,387 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:		<http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gax-part:	<http://w3id.org/gaia-x/participant#>.
+
+# Formal address of the resources definied in this file,
+# no matter what the physical address of this file may be.
+@base			<http://defs.euprogigant.io/machinedata#> .
+
+#@base	<http://localhost:5000/machinedata#> .
+
+# Reference to the current file itself so that "eupg:" can be
+# used as prefix for the local definitions.
+@prefix eupg:		<http://defs.euprogigant.io/machinedata#> .
+#@prefix eupg:		<http://localhost:5000/machinedata#> .
+
+@prefix ua4mt:		<http://defs.euprogigant.io/ua4mt#> .
+#@prefix ua4mt:		<http://localhost:5000/ua4mt#> .
+
+
+# The following properties will be used in multiple classes.
+# Here, their general attributes are definied.
+
+eupg:timestamp # definition of the property
+  a rdf:Property;
+  rdfs:comment "A timestamp defining when the related data was acquired"@en;
+  rdfs:range xsd:dateTime.
+
+eupg:axisId # definition of the property
+  a rdf:Property;
+  rdfs:comment "An identifier referencing one of several axes of a machine tool"@en;
+  rdfs:range xsd:string.
+
+eupg:materialNumber
+  a rdf:Property;
+  rdfs:comment "An alphanumeric identifier for materials from the perspective of a manufacturing execution system"@en;
+  rdfs:range xsd:string.
+
+# The following properties will be used to extend existing ua4mt classes
+
+eupg:gaiaXParticipant # definition of the property
+  a rdf:Property;
+  rdfs:range  gax-part:legalPerson;
+  rdfs:comment "Gaia-X-specific participant"@en.
+
+eupg:gaiaXLocation # definition of the property
+  a rdf:Property;
+  rdfs:range  gax-part:locationAddress;
+  rdfs:comment "Gaia-X-specific location"@en.
+
+#-------------------------------------------------------------------------------
+
+eupg:MachineToolIdentification
+  a rdf:Class;
+  rdfs:subclassOf ua4mt:MachineToolIdentification ;
+  rdfs:comment "A Gaia-X-specific identification of a concrete machine tool"@en.
+
+# The eupg-specific machine tool definition adds a Gaia-X-participant as an
+# optional property. Of course, the manufacturer does not have to be a Gaia-X
+# participant.
+eupg:gaiaXParticipant # use of the property in the MachineToolIdentification class
+  rdfs:domain eupg:MachineToolIdentification.
+
+# Since Gaia-X has an own definition of locations, this type of information
+# may also be applied to the machine tool identification.
+eupg:gaiaXLocation # use of the property in the MachineToolIdentification class
+  rdfs:domain eupg:MachineToolIdentification.
+
+#-------------------------------------------------------------------------------
+
+eupg:SoftwareItem
+  a rdf:Class;
+  rdfs:subclassOf ua4mt:SoftwareItem ;
+  rdfs:comment "A Gaia-X-specific identification of a software component"@en.
+
+# The eupg-specific software component definition adds a Gaia-X-participant as an
+# optional property to softwareItemManufacturer. Of course, the manufacturer
+# supplier does not have to be a Gaia-X participant.
+eupg:gaiaXParticipant # use of the property in the SoftwareItem class
+  rdfs:domain eupg:SoftwareItem.
+
+#-------------------------------------------------------------------------------
+
+eupg:MachineState
+  a rdf:Class ;
+  rdfs:comment "The current state of a machine tool"@en.
+
+eupg:timestamp # use of the property in the MachineState class
+  rdfs:domain eupg:MachineState.
+
+eupg:production
+  a rdf:Property;
+  rdfs:domain eupg:MachineState;
+  rdfs:range  xsd:boolean.
+
+eupg:error
+  a rdf:Property;
+  rdfs:domain eupg:MachineState;
+  rdfs:range  xsd:boolean.
+
+eupg:warning
+  a rdf:Property;
+  rdfs:domain eupg:MachineState;
+  rdfs:range  xsd:boolean.
+
+eupg:setup
+  a rdf:Property;
+  rdfs:domain eupg:MachineState;
+  rdfs:range  xsd:boolean.
+
+#-------------------------------------------------------------------------------
+
+eupg:ProgramState
+  a rdf:Class ;
+  rdfs:comment "The current state of a program running on a machine"@en.
+
+eupg:timestamp # use of the property in the ProgramState class
+  rdfs:domain eupg:ProgramState.
+
+eupg:programIdentification
+  a rdf:Property;
+  rdfs:domain eupg:ProgramState;
+  rdfs:range  xsd:string.
+
+eupg:stateId
+  a rdf:Property;
+  rdfs:domain eupg:ProgramState;
+  rdfs:range  xsd:string.
+
+eupg:lineNumber
+  a rdf:Property;
+  rdfs:domain eupg:ProgramState;
+  rdfs:range  xsd:nonNegativeInteger.
+
+eupg:controlPointId
+  a rdf:Property;
+  rdfs:domain eupg:ProgramState;
+  rdfs:range  xsd:string.
+
+#-------------------------------------------------------------------------------
+
+eupg:AxisState
+  a rdf:Class ;
+  rdfs:comment "The current state of a specific axis of a machine tool"@en.
+
+eupg:timestamp # use of the property in the AxisState class
+  rdfs:domain  eupg:AxisState.
+
+eupg:axisId # use of the property in the AxisState class
+  rdfs:domain eupg:AxisState.
+
+eupg:commandSpeed
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:currentSpeed
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:current
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:torque
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:isRotaryAxis
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:boolean.
+
+eupg:commandPosition
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:currentPosition
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+eupg:lagError
+  a rdf:Property;
+  rdfs:domain eupg:AxisState;
+  rdfs:range  xsd:double.
+
+#-------------------------------------------------------------------------------
+
+eupg:ChannelState
+  a rdf:Class ;
+  rdfs:comment "The current state of a specific channel of a machine tool"@en.
+
+eupg:feedOverride
+  a rdf:Property;
+  rdfs:domain eupg:ChannelState;
+  rdfs:range  xsd:double.
+
+eupg:rapidOverride
+  a rdf:Property;
+  rdfs:domain eupg:ChannelState;
+  rdfs:range  xsd:double.
+
+eupg:rapidMovement
+  a rdf:Property;
+  rdfs:domain eupg:ChannelState;
+  rdfs:range  xsd:boolean.
+
+#-------------------------------------------------------------------------------
+
+eupg:ToolState
+  a rdf:Class ;
+  rdfs:comment "The current state of a tool being used with a machine tool"@en.
+
+eupg:timestamp # use of the property in the ToolState class
+  rdfs:domain eupg:ToolState.
+
+eupg:toolId
+  a rdf:Property;
+  rdfs:domain eupg:ToolState;
+  rdfs:range  xsd:string.
+
+#-------------------------------------------------------------------------------
+
+eupg:ToolPosition
+  a rdf:Class ;
+  rdfs:comment "The current position state of a tool being used with a machine tool"@en.
+
+eupg:timestamp # use of the property in the ToolPosition class
+  rdfs:domain eupg:ToolPosition.
+
+eupg:axisId # use of the property in the ToolPosition class
+  rdfs:domain eupg:ToolPosition.
+
+eupg:currentValue
+  a rdf:Property;
+  rdfs:domain eupg:ToolPosition;
+  rdfs:range  xsd:double.
+
+#-------------------------------------------------------------------------------
+
+eupg:ProductComponent
+  a rdf:Class;
+  rdfs:comment "A component material required to assemble a product"@en.
+
+eupg:materialNumber # definition of this property see above
+  rdfs:comment "The material number of a component"@en;
+  rdfs:domain eupg:ProductComponent.
+
+#-------------------------------------------------------------------------------
+
+eupg:ProductInspectionFeature
+  a rdf:Class;
+  rdfs:comment "An inspection feature for quality inspections of a product"@en.
+
+# The properties of an inspection feature still need to be defined
+
+#-------------------------------------------------------------------------------
+
+eupg:ProductionOperationData
+  a rdf:Class .
+
+eupg:orderNumber
+  a rdf:Property;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:operationNumber
+  a rdf:Property;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:confirmationNumber
+  a rdf:Property;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+# Maybe this property should better refer to a class named "eupg:Material"
+# which would then have the materialNumber as a property.
+eupg:materialNumber # definition of this property see above
+  rdfs:comment "The material number of the part being produced"@en;
+  rdfs:domain eupg:ProductionOperationData.
+
+eupg:batchNumber
+  a rdf:Property;
+  rdfs:comment "The number of the batch which the produced is assigned to"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:productSerialNumber
+  a rdf:Property;
+  rdfs:comment "The serial number of the part being produced"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:productionStart
+  a rdf:Property;
+  rdfs:comment "The planned production start time"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:dateTime.
+
+eupg:productionEnd
+  a rdf:Property;
+  rdfs:comment "The planned production end time"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:dateTime.
+
+eupg:productionPartIdentifier
+  a rdf:Property;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:nonNegativeInteger.
+
+eupg:workplaceIdentifier
+  a rdf:Property;
+  rdfs:comment "The identifier of the machine from the perspective of the manufacturing execution system"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:workplaceName
+  a rdf:Property;
+  rdfs:comment "The human-readable name of the workplace from the perspective of the manufacturing execution system"@en;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  xsd:string.
+
+eupg:productComponents
+  a rdf:List;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  eupg:ProductComponent.
+
+eupg:productInspectionFeatures
+  a rdf:List;
+  rdfs:domain eupg:ProductionOperationData;
+  rdfs:range  eupg:ProductInspectionFeature.
+
+#-------------------------------------------------------------------------------
+
+eupg:Machine
+  a rdf:Class .
+
+eupg:machineIdentification
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:MachineToolIdentification.
+
+eupg:softwareItems
+  a rdf:List;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:SoftwareItem.
+
+eupg:machineState
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:MachineState.
+
+eupg:programState
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:ProgramState.
+
+eupg:axisStates
+  a rdf:List;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:AxisState.
+
+eupg:channelStates
+  a rdf:List;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:ChannelState.
+
+eupg:toolState
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:ToolState.
+
+eupg:toolPosition
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:ToolPosition.
+
+eupg:productionOperationData
+  a rdf:Property;
+  rdfs:domain eupg:Machine;
+  rdfs:range  eupg:ProductionOperationData.
