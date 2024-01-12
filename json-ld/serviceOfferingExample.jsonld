@@ -1,0 +1,35 @@
+{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://w3id.org/security/suites/jws-2020/v1",
+      "https://registry.lab.gaia-x.eu/development/api/trusted-shape-registry/v1/shapes/jsonld/trustframework#"
+    ],
+    "type": "VerifiableCredential",
+    "id": "https://wizard.lab.gaia-x.eu/api/credentials/2d37wbGvQzbAQ84yRouh2m2vBKkN8s5AfH9Q75HZRCUQmJW7yAVSNKzjJj6gcjE2mDNDUHCichXWdMH3S2c8AaDLm3kXmf5R8DYhgHbgszavMGkJtTerMG1noKM5aT2fpmn33D5Y9kMDa7zbkJAsqirV7ogQZy3KrX5bz6WvvM4ZUH2VjNX5EbT6UvsAqALqcjVoVwWbNgiUEm8ULQGz6pQE6RbTp1uScVNHgSa2PK5CtS4SL7Ug6mw8Nu79yxGXw6ScrsAb5yyEoMsRMokxW4WhnqnjeHjM7peSiKFWKr9H4s2vhaAMamjw8VV1tQSNbgmJR3muhXyy5YwTohxXcQnwSwD5cDg1Ty5ar7fTYLu8Sc8zHFX7izqX4CHyzv5uoH7zmf54wxJ7ogJpcmH3JFptvMCr9KyYbaLYaSNUarSHvDws5CaB7hraoKdC7eNzhiHDBPgU3H2GMDAFpHpa95zVuiKC4LdfH7tGqzp3YVdRqsT4kCmnFBi5yT3J5Exa2TYVUxLtabkw4yKv31C42hjagUpstckX2dw7m9vtd7e8LUsUQHmyK7vrtAAamzPj3ZHxzkgG2mHEu8HeMnQaCJtAhqun9YYrAYqeJyr?uid=ea2a57ab-851b-42c5-9dde-a40f7106b8e8",
+    "issuer": "did:web:wizard.lab.gaia-x.eu:api:credentials:2d37wbGvQzbAQ84yRouh2m2vBKkN8s5AfH9Q75HZRCUQmJW7yAVSNKzjJj6gcjE2mDNDUHCichXWdMH3S2c8AaDLm3kXmf5R8DYhgHbgszavMGkJtTerMG1noKM5aT2fpmn33D5Y9kMDa7zbkJAsqirV7ogQZy3KrX5bz6WvvM4ZUH2VjNX5EbT6UvsAqALqcjVoVwWbNgiUEm8ULQGz6pQE6RbTp1uScVNHgSa2PK5CtS4SL7Ug6mw8Nu79yxGXw6ScrsAb5yyEoMsRMokxW4WhnqnjeHjM7peSiKFWKr9H4s2vhaAMamjw8VV1tQSNbgmJR3muhXyy5YwTohxXcQnwSwD5cDg1Ty5ar7fTYLu8Sc8zHFX7izqX4CHyzv5uoH7zmf54wxJ7ogJpcmH3JFptvMCr9KyYbaLYaSNUarSHvDws5CaB7hraoKdC7eNzhiHDBPgU3H2GMDAFpHpa95zVuiKC4LdfH7tGqzp3YVdRqsT4kCmnFBi5yT3J5Exa2TYVUxLtabkw4yKv31C42hjagUpstckX2dw7m9vtd7e8LUsUQHmyK7vrtAAamzPj3ZHxzkgG2mHEu8HeMnQaCJtAhqun9YYrAYqeJyr",
+    "issuanceDate": "2024-01-12T08:11:23.839Z",
+    "credentialSubject": {
+      "type": "gx:ServiceOffering",
+      "gx:providedBy": {
+        "id": "https://wizard.lab.gaia-x.eu/api/credentials/2d37wbGvQzbAQ84yRouh2m2vBKkN8s5AfH9Q75HZRCUQmJW7yAVSNKzjJj6gcjE2mDNDUHCichXWdMH3S2c8AaDLm3kXmf5R8DFPWTYo5iRYkn8kvgU3AjMXc2qTbhuMHCpucKGgT1ZMkcHUygZkt11iD3T8VJNKYwsdk4MGoZwdqoFUuTKVcsXVTBA4ofD1Dtqzjavyng5WUpvJf4gRyfGkMvYYuHCgay8TK8Dayt6Rhcs3r2d1gRCg2UV419S9CpWZGwKQNEXdYbaB2eTiNbQ83KMd4mj1oSJgF7LLDZLJtKJbhwLzR3x35QUqEGevRxnRDKoPdHrEZN7r9TVAmvr9rt7Xq8eB4zGMTza59hisEAUaHsmWQNaVDorqFyZgN5bXswMK1irVQ5SVR9osCCRrKUKkntxfakjmSqapPfveMP39vkgTXfEhsfLUZXGwFcpgLpWxWRn1QLnJY11BVymS7DyaSvbSKotNFQxyV6vghfM2Jetw1mLxU5qsQqDYnDYJjPZQSmkwxjX3yenPVCz6N2ox83tj9AuuQrzg5p2iukNdunDd2QCsHaMEtTq9JVLzXtWs2eZbPkxCBEQwoKTGGVhKu5yxZjCtQGc#9894e9b0a38aa105b50bb9f4e7d0975641273416e70f166f4bd9fd1b00dfe81d"
+      },
+      "gx:policy": "",
+      "gx:termsAndConditions": {
+        "gx:URL": "http://termsandconds.com",
+        "gx:hash": "d8402a23de560f5ab34b22d1a142feb9e13b3143"
+      },
+      "gx:dataAccountExport": {
+        "gx:requestType": "API",
+        "gx:accessType": "digital",
+        "gx:formatType": "application/json"
+      },
+      "id": "https://wizard.lab.gaia-x.eu/api/credentials/2d37wbGvQzbAQ84yRouh2m2vBKkN8s5AfH9Q75HZRCUQmJW7yAVSNKzjJj6gcjE2mDNDUHCichXWdMH3S2c8AaDLm3kXmf5R8DYhgHbgszavMGkJtTerMG1noKM5aT2fpmn33D5Y9kMDa7zbkJAsqirV7ogQZy3KrX5bz6WvvM4ZUH2VjNX5EbT6UvsAqALqcjVoVwWbNgiUEm8ULQGz6pQE6RbTp1uScVNHgSa2PK5CtS4SL7Ug6mw8Nu79yxGXw6ScrsAb5yyEoMsRMokxW4WhnqnjeHjM7peSiKFWKr9H4s2vhaAMamjw8VV1tQSNbgmJR3muhXyy5YwTohxXcQnwSwD5cDg1Ty5ar7fTYLu8Sc8zHFX7izqX4CHyzv5uoH7zmf54wxJ7ogJpcmH3JFptvMCr9KyYbaLYaSNUarSHvDws5CaB7hraoKdC7eNzhiHDBPgU3H2GMDAFpHpa95zVuiKC4LdfH7tGqzp3YVdRqsT4kCmnFBi5yT3J5Exa2TYVUxLtabkw4yKv31C42hjagUpstckX2dw7m9vtd7e8LUsUQHmyK7vrtAAamzPj3ZHxzkgG2mHEu8HeMnQaCJtAhqun9YYrAYqeJyr#11914c3b18fad9a0bcc4d01518b264b5d0cd651544c4d808ae0fa073b74094e1"
+    },
+    "proof": {
+      "type": "JsonWebSignature2020",
+      "created": "2024-01-12T08:11:25.530Z",
+      "proofPurpose": "assertionMethod",
+      "verificationMethod": "did:web:wizard.lab.gaia-x.eu:api:credentials:2d37wbGvQzbAQ84yRouh2m2vBKkN8s5AfH9Q75HZRCUQmJW7yAVSNKzjJj6gcjE2mDNDUHCichXWdMH3S2c8AaDLm3kXmf5R8DYhgHbgszavMGkJtTerMG1noKM5aT2fpmn33D5Y9kMDa7zbkJAsqirV7ogQZy3KrX5bz6WvvM4ZUH2VjNX5EbT6UvsAqALqcjVoVwWbNgiUEm8ULQGz6pQE6RbTp1uScVNHgSa2PK5CtS4SL7Ug6mw8Nu79yxGXw6ScrsAb5yyEoMsRMokxW4WhnqnjeHjM7peSiKFWKr9H4s2vhaAMamjw8VV1tQSNbgmJR3muhXyy5YwTohxXcQnwSwD5cDg1Ty5ar7fTYLu8Sc8zHFX7izqX4CHyzv5uoH7zmf54wxJ7ogJpcmH3JFptvMCr9KyYbaLYaSNUarSHvDws5CaB7hraoKdC7eNzhiHDBPgU3H2GMDAFpHpa95zVuiKC4LdfH7tGqzp3YVdRqsT4kCmnFBi5yT3J5Exa2TYVUxLtabkw4yKv31C42hjagUpstckX2dw7m9vtd7e8LUsUQHmyK7vrtAAamzPj3ZHxzkgG2mHEu8HeMnQaCJtAhqun9YYrAYqeJyr#JWK2020",
+      "jws": "eyJhbGciOiJQUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..0F4n4BMZ6qkjka_3HDEImIsVKEl077d6_-RfXj2iWnKdBsupwvQLkRY9wB1cdnY-pqbzb8lu7fUacZSVOcF-PsQaUXzD7jR3LW30okm6o9QzTYJUKOyBijslWaiqilF1MxnniotEjqlpapvQw1mWKT_s_tV_Y3_nC0lLyfZZvaG6l0iH-iHxWLd9s_t946y0UpNJwKbdWU1IrCiza4kFO9mAe8QUuaQf0zyD_hxm1sMi_O5pH_VAcdh2gfHmWzGJGZKtAngRPIlx-5d2El_-G6Dur2itwsDbWWvqjIrcK3mCxXqJ7vQXbeTe2BMSwkVywO68o-tbR0qslxozyQ8gbw"
+    }
+  }
