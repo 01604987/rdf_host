@@ -1,0 +1,991 @@
+[
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ProductComponent",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A component material required to assemble a product"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#error",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#toolId",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ProductInspectionFeature",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An inspection feature for quality inspections of a product"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ToolState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current state of a tool being used with a machine tool"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#rapidOverride",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ChannelState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#channelStates",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ChannelState"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#lineNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#axisStates",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#batchNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The number of the batch which the produced is assigned to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#MachineToolIdentification",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A Gaia-X-specific identification of a concrete machine tool"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subclassOf": [
+      {
+        "@id": "http://defs.euprogigant.io/ua4mt#MachineToolIdentification"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#toolPosition",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolPosition"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#lagError",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#current",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#warning",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#gaiaXLocation",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Gaia-X-specific location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineToolIdentification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/gaia-x/participant#locationAddress"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#gaiaXParticipant",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Gaia-X-specific participant"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#SoftwareItem"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineToolIdentification"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/gaia-x/participant#legalPerson"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productionOperationData",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productSerialNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The serial number of the part being produced"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#workplaceName",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The human-readable name of the workplace from the perspective of the manufacturing execution system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productionStart",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The planned production start time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#production",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#isRotaryAxis",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#currentValue",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolPosition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#axisId",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "An identifier referencing one of several axes of a machine tool"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolPosition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ToolPosition",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current position state of a tool being used with a machine tool"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#machineIdentification",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineToolIdentification"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#workplaceIdentifier",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The identifier of the machine from the perspective of the manufacturing execution system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#programState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#controlPointId",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#feedOverride",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ChannelState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productComponents",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductComponent"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productInspectionFeatures",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductInspectionFeature"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#toolState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolState"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#AxisState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current state of a specific axis of a machine tool"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ChannelState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current state of a specific channel of a machine tool"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productionPartIdentifier",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#commandPosition",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#stateId",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#machineState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#MachineState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current state of a machine tool"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#programIdentification",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#torque",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#ProgramState",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The current state of a program running on a machine"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#materialNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The material number of a component"
+      },
+      {
+        "@language": "en",
+        "@value": "The material number of the part being produced"
+      },
+      {
+        "@language": "en",
+        "@value": "An alphanumeric identifier for materials from the perspective of a manufacturing execution system"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductComponent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#confirmationNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#commandSpeed",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#timestamp",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A timestamp defining when the related data was acquired"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProgramState"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolPosition"
+      },
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ToolState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#orderNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#currentSpeed",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#rapidMovement",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ChannelState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#softwareItems",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#Machine"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#SoftwareItem"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#currentPosition",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#AxisState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#Machine",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#operationNumber",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#productionEnd",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The planned production end time"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#ProductionOperationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#SoftwareItem",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A Gaia-X-specific identification of a software component"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subclassOf": [
+      {
+        "@id": "http://defs.euprogigant.io/ua4mt#SoftwareItem"
+      }
+    ]
+  },
+  {
+    "@id": "http://defs.euprogigant.io/machinedata#setup",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://defs.euprogigant.io/machinedata#MachineState"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ]
+  }
+]
