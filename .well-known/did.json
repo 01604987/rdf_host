@@ -1,9 +1,9 @@
 {
-    "id": "did:web:01604987.github.io",
+    "id": "did:web:01604987.github.io/rdf_host",
     "verificationMethod": [
       {
-        "id": "did:web.01604987.github.iot#X509-JWK2020",
-        "controller": "did:web:01604987.github.io",
+        "id": "did:web.01604987.github.io/rdf_host#X509-JWK2020",
+        "controller": "did:web:01604987.github.io/rdf_host",
         "type": "JsonWebKey2020",
         "publicKeyJwk": {
           "alg": "PS256",
@@ -15,7 +15,7 @@
       }
     ],
     "assertionMethod": [
-      "did:web:01604987.github.io#X509-JWK2020"
+      "did:web:01604987.github.io/rdf_host#X509-JWK2020"
     ],
     "@context": [
       "https://www.w3.org/ns/did/v1",
